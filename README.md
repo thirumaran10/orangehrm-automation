@@ -346,21 +346,6 @@ export default defineConfig({
    await expect(errorMsg).toBeTruthy();
    ```
 
-### 7. **Organize Tests Logically**
-   ```typescript
-   test.describe('Login Page', () => {
-     test.describe('Valid Credentials', () => {
-       test('should login successfully', async () => {});
-     });
-     
-     test.describe('Invalid Credentials', () => {
-       test('should show error message', async () => {});
-     });
-   });
-   ```
-
----
-
 ## 🐛 Troubleshooting
 
 ### Issue: Tests timing out
