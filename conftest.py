@@ -9,13 +9,11 @@ def browser():  # browser -> session (expensive)
         browser.close()
 
 @pytest.fixture
-def context(browser):  # context -> function (isolation)
-    context = browser.new_context(no_viewport=True)
-    yield context
-    context.close()
-
-@pytest.fixture
-def page(context):  # page -> function (disposable)
+def page(browser):
+    context = browser.new_context()
     page = context.new_page()
     yield page
-    page.close()
+    context.close()
+
+
+
