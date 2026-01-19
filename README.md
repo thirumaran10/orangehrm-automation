@@ -17,8 +17,14 @@ Key features:
 
 ## Folder Structure
 
-## Test: `test_open_browser`
+## Test: `test_login`
 **Purpose:** Verify that the login page opens correctly and allows a user to log in with valid credentials.
+
+## Test: `test_form_submit`
+**Purpose:** Reciving the user information before selecting the product.
+
+## Test: `test_shop`
+**Purpose:** selecting the products and adding it into the cart and then chekout.
 
 **Notes:**
 - `page` fixture ensures test isolation.
