@@ -1,6 +1,7 @@
 from pages.login_page import LoginPage
 from pages.shop_page import ShopPage
 
+
 def test_add_products_to_cart(page):
     login= LoginPage(page)
     login.open()
@@ -14,5 +15,14 @@ def test_add_products_to_cart(page):
     for product in products:
         shop.add_product_to_cart(product)
 
-    shop.checkout_items()
+    Checkout = shop.checkout_items()
+
+    Checkout.increase_quantity("Nokia Edge",2)
+    Checkout.increase_quantity("Blackberry",3)
+    total = Checkout.get_total_amount()
+    print(total)
+
+    Checkout.final_checkout()
+
+        
 
