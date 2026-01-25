@@ -22,7 +22,13 @@ def test_add_products_to_cart(page):
     total = Checkout.get_total_amount()
     print(total)
 
-    Checkout.final_checkout()
+    placing_order = Checkout.final_checkout()
+    placing_order.place_order("Indi", "India")
+    msg = placing_order.get_success_message()
+    assert "Success" in msg
+
+
+
 
         
 
