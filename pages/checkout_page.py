@@ -1,3 +1,5 @@
+from pages.placing_order_page import PlacingOrderPage
+
 class CheckoutPage:
 
     def __init__(self,page):
@@ -13,6 +15,6 @@ class CheckoutPage:
     
     def final_checkout(self):
         self.page.get_by_role("button", name = "Checkout").click()
-
+        return PlacingOrderPage(self.page)
     
 
