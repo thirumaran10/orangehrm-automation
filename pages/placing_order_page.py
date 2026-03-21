@@ -12,7 +12,7 @@ class PlacingOrderPage:
         suggestion = self.page.locator(".suggestions ul li a") 
         suggestion.first.wait_for(state = "visible")
         
-        suggestion.filter(has_text = country_fullname).click()
+        suggestion.filter(has_text = country_fullname).click()     
 
         self.page.wait_for_timeout(300)
         self.page.locator("//*[text()='India']").click()
@@ -23,5 +23,5 @@ class PlacingOrderPage:
     def get_success_message(self):
         alert = self.page.locator(".alert-success")
         expect(alert).to_be_visible()
-        return alert.text_content()
+        return alert.text_content()   
     
